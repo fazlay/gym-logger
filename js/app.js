@@ -3,7 +3,6 @@ const date = currentDate.getDate();
 const day = currentDate.getDay();
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-console.log(day);
 
 // ------------------------------
 
@@ -49,72 +48,110 @@ document
   .getElementById('first-date')
   .addEventListener('click', function (event) {
     const dateValue = event.target.textContent;
-    console.log('date clicked');
-    console.log(dateValue);
+    // console.log('date clicked');
+    // console.log(dateValue);
   });
 
-fetch('https://jsonkeeper.com/b/E1MG')
+// ---------GET DATA------------------------------------
+
+// let req = new XMLHttpRequest();
+
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     const data = JSON.parse(req.responseText);
+//     displayData(data);
+//     console.log(data);
+//   }
+// };
+
+// req.open('GET', 'https://api.jsonbin.io/b/613f8ca5aa02be1d44478310', true);
+// req.setRequestHeader(
+//   'VFy7XrHmq3NJT9zMb8EqumEUEoBIO',
+//   '$2b$10$qF.NBkRKLS8cB5wjqiVpE.P'
+// );
+// req.send();
+// --------------GET DATA-------------------------------------
+
+fetch('data.JSON')
   .then((response) => response.json())
   .then((data) => displayData(data));
 
 const displayData = (data) => {
+  console.log(data);
   document.getElementById(
     'currentUser'
   ).innerText = `Currently Booked : ${data[0].morning.length}`;
-  console.log(data[0].morning.length);
 };
 //
 //
 //
+// const gymMember = [
+//   {
+//     morning: [
+//       { name: 'UPDATED2 fazlay', sex: 'male' },
+//       { name: ' UPDATED2 nafisa', sex: 'Female' },
+//       { name: ' UPDATED2c titli', sex: 'Female' },
+//     ],
+//     noon: [
+//       { name: ' UPDATED jalal', sex: 'male' },
+//       { name: ' UPDATED hossain', sex: 'male' },
+//     ],
+//     evening: [{ UPDATEDname: 'tamasa', sex: 'male' }],
+//   },
+//   {
+//     morning: [],
+//     noon: [],
+//     evening: [],
+//   },
+// ];
 //
+// ---------------------------------------------------------------POST DATA--------------------------
+
+// const sendData = () => {
+//   console.log('sending Data .......');
+//   let req = new XMLHttpRequest();
+
+//   req.onreadystatechange = () => {
+//     if (req.readyState == XMLHttpRequest.DONE) {
+//       console.log(req.responseText);
+//     }
+//   };
+
+//   req.open('PUT', 'https://api.jsonbin.io/b/613f8ca5aa02be1d44478310', true);
+//   req.setRequestHeader('Content-Type', 'application/json');
+//   req.setRequestHeader(
+//     'VFy7XrHmq3NJT9zMb8EqumEUEoBIO',
+//     '$2b$10$qF.NBkRKLS8cB5wjqiVpE.P'
+//   );
+//   req.send(JSON.stringify(gymMember));
+// };
+
+// ------------------------------------------------------------POST DATA--------------------------
+
 //
 /*
- const gymMember= [
-  {
-    morning: [
-      { name: 'fazlay', sex: 'male' },
-      { name: 'nafisa', sex: 'Female' },
-      { name: 'titli', sex: 'Female' },
-    ],
-    'noon': [
-      { name: 'jalal', sex: 'male' },
-      { name: 'hossain', sex: 'male' },
-    ],
-    'evening': [{ 'name': 'tamasa', 'sex': 'male' }],
-  },
-  {
-    'morning': [],
-    'noon': [],
-    'evening': [],
-  }
-];
+ 
 
 [
   {
-    "morning": [
-      { "name": "fazlay", "sex": "male" },
-      { "name": "nafisa", "sex": "Female" },
-      { "name": "titli", "sex": "Female" }
-    ],
-  "noon": [
-      { "name": "jalal", "sex": "male" },
-      { "name": "hossain", "sex": "male"}
-    ],
-    "evening": [{ "name": "tamasa", "sex":"male"}]
+    "morning": [ {"name": "fazlay", "gender": "male" }, { "name": "nafisa", "gender": "Female" },{ "name": "titli", "gender": "Female" }],
+    "noon": [{ "name": "jalal", "gender": "male" },{ "name": "hossain", "gender": "male"}],
+   "evening": [{ "name": "tamasa", "gender":"male"}]
   },
   {
-    "morning": [],
-    "noon": [],
-    "evening": []
+     "morning": [],
+     "noon": [],
+     "evening": []
   }
+
 ]
 
 //JSON BIN.io ACCESS KEY : https://api.jsonbin.io/b/613badad9548541c29afa06f
 
-//API KEY :$2b$10$OFvGksPGYZySDS/h0HLo4.CBYjYQmXydM7HMNMglI0fHDWJb7/Cq6
+//API KEY :$2b$10$qF.NBkRKLS8cB5wjqiVpE.P/VFy7XrHmq3NJT9zMb8EqumEUEoBIO
 
 
-
+//X-Master-Key:$2b$10$qF.NBkRKLS8cB5wjqiVpE.P/VFy7XrHmq3NJT9zMb8EqumEUEoBIO
 
 
 
