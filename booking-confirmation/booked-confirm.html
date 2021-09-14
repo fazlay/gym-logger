@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>confirm</title>
+    <!-- Tailwaind CSS -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="h-screen bg-gray-400">
+        <h1>Registration Page</h1>
+        <button
+          onclick="register()"
+          class="
+            flex
+            justify-items-center
+            items-center
+            h-10
+            px-5
+            m-2
+            text-blue-100
+            transition-colors
+            duration-150
+            bg-blue-500
+            rounded-lg
+            focus:shadow-outline
+            hover:bg-blue-600
+          "
+        >
+          Register
+        </button>
+      </section>
+      <section
+        id="confirmation"
+        class="
+          absolute
+          top-0
+          left-0
+          h-screen
+          w-screen
+          bg-gray-400 bg-opacity-60
+          grid
+          justify-items-center
+          items-center
+          z-10
+          hidden
+        "
+      >
+        <div
+          class="
+            grid
+            justify-items-center
+            items-center
+            bg-white
+            shadow-xl
+            rounded
+            px-8
+            py-10
+          "
+        >
+          <h1 class="text-6xl italic font-bold mb-4">Congratulations!</h1>
+          <p class="text-gray-500 mb-4">
+            Your slot has been confirmed. Please check the detals.
+          </p>
+          <hr />
+          <p>Name: <span id="confirm-name">Rahul</span></p>
+          <p>Sex: <span id="confirm-sex">male</span></p>
+          <p>Slot: <span id="confirm-slot">Morning</span></p>
+          <p>Date: <span id="confirm-date">14-09-2021</span></p>
+          <hr />
+          <img
+            class="object-contain h-28 w-full"
+            src="img/signature-40139.png"
+            alt=""
+            srcset=""
+          />
+          <button
+            id="confirm-close"
+            onclick="confirmClose()"
+            class="
+              flex
+              justify-items-center
+              items-center
+              h-10
+              px-5
+              m-2
+              text-red-100
+              transition-colors
+              duration-150
+              bg-red-500
+              rounded-lg
+              focus:shadow-outline
+              hover:bg-red-600
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Close
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="js/booked-confirm.js"></script>
+  </body>
+</html>
